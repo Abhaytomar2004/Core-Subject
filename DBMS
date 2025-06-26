@@ -1,1 +1,126 @@
 https://chat.deepseek.com/a/chat/s/0119e3fc-528f-4845-b237-47cbbaf99c96
+Database Concepts Cheat Sheet for Interviews
+1. DBMS Basics
+Data: Raw facts (e.g., "25", "John").
+
+Information: Processed data with context (e.g., "John is 25 years old").
+
+Database: Organized collection of data.
+
+DBMS: Software to manage databases (e.g., MySQL, Oracle).
+
+2. Database Architecture
+3-Level Architecture:
+
+External: User views (e.g., customer portal).
+
+Conceptual: Logical design (tables, relationships).
+
+Internal: Physical storage (indexes, files).
+
+3. Data Models
+ER Model:
+
+Entities: Objects (e.g., Student).
+
+Relationships: Connections (e.g., EnrollsIn).
+
+Attributes: Properties (e.g., student_id).
+
+Relational Model: Tables with rows (tuples) and columns (attributes).
+
+4. Keys in RDBMS
+Primary Key (PK): Uniquely identifies a row (e.g., student_id).
+
+Foreign Key (FK): Links tables (e.g., course_id in Enrollments).
+
+Candidate Key: Potential PKs (e.g., email or SSN).
+
+5. Normalization
+1NF: Atomic values, no repeating groups.
+
+2NF: 1NF + no partial dependencies (all non-PK attributes depend on full PK).
+
+3NF: 2NF + no transitive dependencies (non-PK attributes depend only on PK).
+
+BCNF: 3NF + every determinant is a superkey.
+
+6. Transactions (ACID)
+Atomicity: All-or-nothing execution.
+
+Consistency: DB remains valid before/after transaction.
+
+Isolation: Concurrent transactions don’t interfere.
+
+Durability: Committed changes persist.
+
+7. Indexing
+Primary Index: On sorted PK (e.g., student_id).
+
+Secondary Index: On non-PK columns (e.g., email).
+
+Types:
+
+Dense: Index entry per record.
+
+Sparse: Index entry per block.
+
+8. NoSQL Databases
+Types:
+
+Key-Value: Redis, DynamoDB (fast lookups).
+
+Document: MongoDB (JSON-like storage).
+
+Columnar: Cassandra (analytics).
+
+Graph: Neo4j (relationships).
+
+CAP Theorem: Choose 2 of:
+
+Consistency (CP: MongoDB).
+
+Availability (AP: Cassandra).
+
+Partition Tolerance (mandatory).
+
+9. Scaling Patterns
+Vertical Scaling: Upgrade server hardware (CPU/RAM).
+
+Read/Write Separation: Master (writes) + Replicas (reads).
+
+Sharding: Split data horizontally (e.g., by user_id).
+
+Multi-DC Replication: Global availability (e.g., AWS regions).
+
+10. Master-Slave Replication (Lec 21)
+Master: Handles writes.
+
+Slaves: Handle reads + sync data from master.
+
+Use Case: Read-heavy apps (e.g., blogs).
+
+Replication Types:
+
+Synchronous: Strong consistency (banking).
+
+Asynchronous: High availability (social media).
+
+Quick Tips for Interviews
+SQL vs. NoSQL: Use SQL for ACID, NoSQL for scale/flexibility.
+
+Partitioning: Vertical (columns) vs. Horizontal (rows/sharding).
+
+Indexing Trade-off: Faster reads but slower writes.
+
+Example:
+
+sql
+-- Sharding query routing (pseudo-code)
+shard_id = user_id % 10  -- Route to Shard 3 for user_id=23
+Copy-Friendly Format (PDF attached):
+Download PDF Cheat Sheet (Dummy link for illustration)
+
+Key Topics Covered: DBMS, ER Model, Normalization, ACID, Indexing, NoSQL, CAP Theorem, Scaling, Master-Slave.
+
+🚀 Good luck with your interview!
